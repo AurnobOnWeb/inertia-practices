@@ -15,5 +15,21 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    return Inertia::render('Home', [
+        'name' => 'Abir Hossen',
+        'FrameWork' => [
+            "Laravel", 'vue', 'React', 'Angular'
+        ]
+    ]);
+});
+
+Route::get('/users', function () {
+    return Inertia::render('Users');
+});
+Route::get('/settings', function () {
+    return Inertia::render('Setting');
+});
+
+Route::post('/logout', function () {
+    dd('HI Buddy');
 });
